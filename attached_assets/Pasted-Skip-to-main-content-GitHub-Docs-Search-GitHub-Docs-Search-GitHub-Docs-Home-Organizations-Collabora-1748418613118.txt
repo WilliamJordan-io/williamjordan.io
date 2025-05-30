@@ -1,0 +1,193 @@
+Skip to main content
+GitHub Docs
+Search GitHub Docs
+Search GitHub Docs
+Home
+Organizations
+
+Collaborate with groups
+
+Manage membership
+
+Manage organization roles
+
+Manage repository access
+
+Organize members into teams
+
+Manage programmatic access
+
+Manage OAuth access
+
+Manage organization settings
+Verify or approve a domain
+Renaming an organization
+Transfer ownership
+Govern repository usage
+Restrict repository creation
+Set repo management policy
+Set visibility changes policy
+Manage forking policy
+Manage pull request reviews
+Disable or limit actions
+About private networking
+About Azure private networking
+Configuring private networking
+Troubleshooting Azure private networking
+Configure retention period
+Set collaborator policy
+Allow issue deletion
+Organization discussions
+Manage repository discussions
+Manage the commit signoff policy
+Restrict deploy keys
+Restrict team creation
+Create an announcement banner
+Manage scheduled reminders
+Manage default branch name
+Manage default labels
+Change insight visibility
+Manage display of member names
+Manage sponsorship updates
+Manage Pages site publication
+Archive an organization
+Delete organization
+Convert organization to user
+Upgrade to Corporate ToS
+Disable projects
+Manage projects base permissions
+Project visibility permissions
+Create rulesets
+Manage rulesets
+Custom properties
+Manage or restrict models
+
+Organization security
+
+Manage SAML single sign-on
+
+Grant access with SAML
+
+Manage Git access
+
+Migrate to improved permissions
+Organizations/Manage organization settings/
+Verifying or approving a domain for your organization
+You can verify your ownership of domains with GitHub to confirm your organization's identity. You can also approve domains that GitHub can send email notifications to for members of your organization.
+
+Who can use this feature?
+Organization owners can verify or approve a domain for an organization.
+
+In this article
+About domain verification
+About domain approval
+Verifying a domain for your organization
+Approving a domain for your organization
+Removing an approved or verified domain
+About domain verification
+After verifying ownership of your organization's domains, a "Verified" badge will display on the organization's profile. If your organization has agreed to the GitHub Customer Agreement, organization owners will be able to verify the identity of organization members by viewing each member's email address within the verified domain. For more information, see About your organization's profile and Upgrading to the GitHub Customer Agreement.
+
+If your organization is owned by an enterprise account, a "Verified" badge will display on your organization's profile for any domains verified for the enterprise account, in addition to any domains verified for the organization. Organization owners can view any domains that an enterprise owner has verified or approved, and edit the domains if the organization owner is also an enterprise owner. For more information, see Verifying or approving a domain for your enterprise.
+
+To display a "Verified" badge, the website and email information shown on an organization's profile must match the verified domain or domains. If the website and email address shown on your organization's profile are hosted on different domains, you must verify both domains. If the website and email address use variants of the same domain, you must verify both variants. For example, if the profile shows the website www.example.com and the email address info@example.com, you would need to verify both www.example.com and example.com.
+
+After verifying ownership of your organization's domain, you can restrict email notifications for the organization to that domain. For more information, see Restricting email notifications for your organization.
+
+Note
+
+To restrict email notifications to a verified domain, your organization must use GitHub Enterprise Cloud. For more information about how you can try GitHub Enterprise Cloud for free, see Setting up a trial of GitHub Enterprise Cloud.
+
+You can also verify custom domains used for GitHub Pages to prevent domain takeovers when a custom domain remains configured but your GitHub Pages site is either disabled or no longer uses the domain. For more information, see Verifying your custom domain for GitHub Pages.
+
+If you confirm your organization’s identity by verifying your domain and restricting email notifications to only verified email domains, you can help prevent sensitive information from being exposed. For more information see Best practices for preventing data leaks in your organization.
+
+About domain approval
+Note
+
+The ability to approve a domain not owned by your organization or enterprise is currently in public preview and subject to change.
+
+If you want to allow members to receive email notifications at a domain you don't own, you can approve the domain, then allow GitHub to send email notifications to addresses within the domain. For example, you can allow a contractor who doesn't have an email address within your own domain to receive email notifications at a domain you feel comfortable with.
+
+After you approve domains for your organization, you can restrict email notifications for activity within the organization to users with verified email addresses within verified or approved domains. For more information, see Restricting email notifications for your organization.
+
+Enterprise owners cannot see which organization members or email addresses receive notifications within approved domains.
+
+Enterprise owners can also approve additional domains for organizations owned by the enterprise. For more information, see Verifying or approving a domain for your enterprise.
+
+Verifying a domain for your organization
+To verify a domain, you must have access to modify domain records with your domain hosting service.
+
+In the upper-right corner of GitHub, select your profile photo, then click  Your organizations.
+
+Next to the organization, click Settings.
+
+In the "Security" section of the sidebar, click  Verified and approved domains.
+
+Next to "Verified & approved domains for your enterprise account", click Add a domain.
+
+Under "What domain would you like to add?", type the domain you'd like to verify, then click Add domain.
+
+Follow the instructions under "Add a DNS TXT record" to create a DNS TXT record with your domain hosting service.
+
+Wait for your DNS configuration to change, which may take up to 72 hours. You can confirm your DNS configuration has changed by running the dig command on the command line, replacing TXT-RECORD-NAME with the name of the TXT record created in your DNS configuration. You should see your new TXT record listed in the command output.
+
+dig TXT-RECORD-NAME +nostats +nocomments +nocmd TXT
+After confirming your TXT record is added to your DNS, follow steps one through three above to navigate to your organization's approved and verified domains.
+
+To the right of the domain that's pending verification, select the  dropdown menu, then click Continue verifying.
+
+Screenshot of the "Verified & approved domains" page. To the right of a domain that is pending verification, a kebab icon is outlined in dark orange.
+Click Verify.
+
+Optionally, once the "Verified" badge is visible on your organization's profile page, you can delete the TXT entry from the DNS record at your domain hosting service.
+
+Approving a domain for your organization
+Note
+
+The ability to approve a domain not owned by your organization or enterprise is currently in public preview and subject to change.
+
+In the upper-right corner of GitHub, select your profile photo, then click  Your organizations.
+
+Next to the organization, click Settings.
+
+In the "Security" section of the sidebar, click  Verified and approved domains.
+
+Next to "Verified & approved domains for your enterprise account", click Add a domain.
+
+Under "What domain would you like to add?", type the domain you'd like to verify, then click Add domain.
+
+To the right of "Can't verify this domain?", click Approve it instead.
+
+Screenshot of the "Verify domain" page. To the right of the "Verify" button, a link, labeled "Approve it instead," is outlined in dark orange.
+Read the information about domain approval, then click Approve DOMAIN.
+
+Removing an approved or verified domain
+In the upper-right corner of GitHub, select your profile photo, then click  Your organizations.
+
+Next to the organization, click Settings.
+
+In the "Security" section of the sidebar, click  Verified and approved domains.
+
+To the right of the domain to remove, select the  dropdown menu, then click Delete.
+
+Screenshot of the "Verified & approved domains" page. To the right of a domain, a kebab icon is outlined in dark orange.
+Help and support
+Did you find what you needed?
+
+Privacy policy
+Help us make these docs great!
+All GitHub docs are open source. See something that's wrong or unclear? Submit a pull request.
+
+Learn how to contribute
+
+Still need help?
+Ask the GitHub community
+Contact support
+Legal
+© 2025 GitHub, Inc.
+Terms
+Privacy
+Status
+Pricing
+Expert services
+Blog

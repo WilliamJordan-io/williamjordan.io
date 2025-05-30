@@ -1,0 +1,134 @@
+willjordan@wills-MacBook-Pro-2 WilliamJordanPortfolio-1 % git init
+error: could not lock config file /Users/willjordan/Repos/williamjordan.io/WilliamJordanPortfolio-1/.git/config: File exists
+fatal: could not set 'core.repositoryformatversion' to '0'
+willjordan@wills-MacBook-Pro-2 WilliamJordanPortfolio-1 % rm -rf .git
+willjordan@wills-MacBook-Pro-2 WilliamJordanPortfolio-1 % git init
+Initialized empty Git repository in /Users/willjordan/Repos/williamjordan.io/WilliamJordanPortfolio-1/.git/
+willjordan@wills-MacBook-Pro-2 WilliamJordanPortfolio-1 % git add .
+willjordan@wills-MacBook-Pro-2 WilliamJordanPortfolio-1 % git commit -m "Initial portfolio website upload"
+[main (root-commit) a9dd67d] Initial portfolio website upload
+ 110 files changed, 17217 insertions(+)
+ create mode 100644 .github/workflows/deploy.yml
+ create mode 100644 .gitignore
+ create mode 100644 .replit
+ create mode 100644 attached_assets/IMG_8297.jpeg
+ create mode 100644 attached_assets/IMG_8500.png
+ create mode 100644 attached_assets/Pasted--DOCTYPE-html-html-lang-en-head-meta-charset-UTF-8-meta-name-vie-1747983716896.txt
+ create mode 100644 attached_assets/Pasted-How-William-Jordan-Creates-AI-Customer-Support-Agents-Leveraging-Advanced-AI-Technology-Jordan-util-1747979672569.txt
+ create mode 100644 attached_assets/image_1747989909113.png
+ create mode 100644 attached_assets/image_1747989931646.png
+ create mode 100644 attached_assets/image_1747990782000.png
+ create mode 100644 attached_assets/image_1747992945180.png
+ create mode 100644 attached_assets/image_1748027534996.png
+ create mode 100644 attached_assets/image_1748056163554.png
+ create mode 100644 attached_assets/image_1748056480849.png
+ create mode 100644 attached_assets/image_1748149837192.png
+ create mode 100644 attached_assets/image_1748150157396.png
+ create mode 100644 attached_assets/image_1748150710208.png
+ create mode 100644 attached_assets/image_1748151775595.png
+ create mode 100644 attached_assets/image_1748151926443.png
+ create mode 100644 attached_assets/image_1748151950567.png
+ create mode 100644 attached_assets/image_1748152066938.png
+ create mode 100644 attached_assets/image_1748227249044.png
+ create mode 100644 attached_assets/image_1748227418105.png
+ create mode 100644 attached_assets/image_1748227433700.png
+ create mode 100644 attached_assets/image_1748227468430.png
+ create mode 100644 attached_assets/image_1748228966576.png
+ create mode 100644 attached_assets/image_1748233674047.png
+ create mode 100644 attached_assets/image_1748233693671.png
+ create mode 100644 attached_assets/image_1748233792374.png
+ create mode 100644 client/index.html
+ create mode 100644 client/src/App.tsx
+ create mode 100644 client/src/components/ai-support-section.tsx
+ create mode 100644 client/src/components/contact-section.tsx
+ create mode 100644 client/src/components/footer.tsx
+ create mode 100644 client/src/components/fullstack-flow-diagram.tsx
+ create mode 100644 client/src/components/hero-section.tsx
+ create mode 100644 client/src/components/ide-showcase.tsx
+ create mode 100644 client/src/components/navigation.tsx
+ create mode 100644 client/src/components/ui/accordion.tsx
+ create mode 100644 client/src/components/ui/alert-dialog.tsx
+ create mode 100644 client/src/components/ui/alert.tsx
+ create mode 100644 client/src/components/ui/aspect-ratio.tsx
+ create mode 100644 client/src/components/ui/avatar.tsx
+ create mode 100644 client/src/components/ui/badge.tsx
+ create mode 100644 client/src/components/ui/breadcrumb.tsx
+ create mode 100644 client/src/components/ui/button.tsx
+ create mode 100644 client/src/components/ui/calendar.tsx
+ create mode 100644 client/src/components/ui/card.tsx
+ create mode 100644 client/src/components/ui/carousel.tsx
+ create mode 100644 client/src/components/ui/chart.tsx
+ create mode 100644 client/src/components/ui/checkbox.tsx
+ create mode 100644 client/src/components/ui/collapsible.tsx
+ create mode 100644 client/src/components/ui/command.tsx
+ create mode 100644 client/src/components/ui/context-menu.tsx
+ create mode 100644 client/src/components/ui/dialog.tsx
+ create mode 100644 client/src/components/ui/drawer.tsx
+ create mode 100644 client/src/components/ui/dropdown-menu.tsx
+ create mode 100644 client/src/components/ui/form.tsx
+ create mode 100644 client/src/components/ui/hover-card.tsx
+ create mode 100644 client/src/components/ui/input-otp.tsx
+ create mode 100644 client/src/components/ui/input.tsx
+ create mode 100644 client/src/components/ui/label.tsx
+ create mode 100644 client/src/components/ui/menubar.tsx
+ create mode 100644 client/src/components/ui/navigation-menu.tsx
+ create mode 100644 client/src/components/ui/pagination.tsx
+ create mode 100644 client/src/components/ui/popover.tsx
+ create mode 100644 client/src/components/ui/progress.tsx
+ create mode 100644 client/src/components/ui/radio-group.tsx
+ create mode 100644 client/src/components/ui/resizable.tsx
+ create mode 100644 client/src/components/ui/scroll-area.tsx
+ create mode 100644 client/src/components/ui/select.tsx
+ create mode 100644 client/src/components/ui/separator.tsx
+ create mode 100644 client/src/components/ui/sheet.tsx
+ create mode 100644 client/src/components/ui/sidebar.tsx
+ create mode 100644 client/src/components/ui/skeleton.tsx
+ create mode 100644 client/src/components/ui/slider.tsx
+ create mode 100644 client/src/components/ui/switch.tsx
+ create mode 100644 client/src/components/ui/table.tsx
+ create mode 100644 client/src/components/ui/tabs.tsx
+ create mode 100644 client/src/components/ui/textarea.tsx
+ create mode 100644 client/src/components/ui/toast.tsx
+ create mode 100644 client/src/components/ui/toaster.tsx
+ create mode 100644 client/src/components/ui/toggle-group.tsx
+ create mode 100644 client/src/components/ui/toggle.tsx
+ create mode 100644 client/src/components/ui/tooltip.tsx
+ create mode 100644 client/src/components/web-dev-section.tsx
+ create mode 100644 client/src/hooks/use-mobile.tsx
+ create mode 100644 client/src/hooks/use-toast.ts
+ create mode 100644 client/src/index.css
+ create mode 100644 client/src/lib/queryClient.ts
+ create mode 100644 client/src/lib/utils.ts
+ create mode 100644 client/src/main.tsx
+ create mode 100644 client/src/pages/home.tsx
+ create mode 100644 client/src/pages/not-found.tsx
+ create mode 100644 components.json
+ create mode 100644 deploy-instructions.md
+ create mode 100644 drizzle.config.ts
+ create mode 100644 package-lock.json
+ create mode 100644 package.json
+ create mode 100644 postcss.config.js
+ create mode 100644 server/email.ts
+ create mode 100644 server/index.ts
+ create mode 100644 server/routes.ts
+ create mode 100644 server/storage.ts
+ create mode 100644 server/vite.ts
+ create mode 100644 shared/schema.ts
+ create mode 100644 tailwind.config.ts
+ create mode 100644 tsconfig.json
+ create mode 100644 vite.config.build.ts
+ create mode 100644 vite.config.ts
+willjordan@wills-MacBook-Pro-2 WilliamJordanPortfolio-1 % git branch -M main
+willjordan@wills-MacBook-Pro-2 WilliamJordanPortfolio-1 % git remote add origin https://github.com/WilliamJordan-io/williamjordan.io.git
+willjordan@wills-MacBook-Pro-2 WilliamJordanPortfolio-1 % git push -u origin main
+Enumerating objects: 118, done.
+Counting objects: 100% (118/118), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (115/115), done.
+Writing objects: 100% (118/118), 7.89 MiB | 6.45 MiB/s, done.
+Total 118 (delta 8), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (8/8), done.
+To https://github.com/WilliamJordan-io/williamjordan.io.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+willjordan@wills-MacBook-Pro-2 WilliamJordanPortfolio-1 % 

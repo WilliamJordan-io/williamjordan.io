@@ -1,0 +1,62 @@
+Skip to content
+Navigation Menu
+WilliamJordan-io
+williamjordan.io
+
+Type / to search
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+
+Custom domain "williamjordan.io" saved. 
+Settings: WilliamJordan-io/williamjordan.io
+Access
+Code and automation
+Security
+Integrations
+GitHub Pages
+GitHub Pages is designed to host your personal, organization, or project pages from a GitHub repository.
+
+ Caution: This repository is private but the published site will be public.
+Build and deployment
+Source
+Branch
+Your GitHub Pages site is currently being built from the main branch. Learn more about configuring the publishing source for your site.
+
+Learn how to add a Jekyll theme to your site.
+
+Custom domain
+Custom domain
+Custom domains allow you to serve your site from a domain other than williamjordan-io.github.io. Learn more about configuring custom domains.
+
+williamjordan.io
+ 
+DNS check unsuccessful
+
+Both williamjordan.io and its alternate name are improperly configured
+Domain does not resolve to the GitHub Pages server. For more information, see documentation (NotServedByPagesError).
+Enforce HTTPS — Unavailable for your site because your domain is not properly configured to support HTTPS (williamjordan.io) — Troubleshooting custom domains 
+HTTPS provides a layer of encryption that prevents others from snooping on or tampering with traffic to your site.
+When HTTPS is enforced, your site will only be served over HTTPS. Learn more about securing your GitHub Pages site with HTTPS.
+
+Visibility
+GitHub Enterprise
+With a GitHub Enterprise account, you can restrict access to your GitHub Pages site by publishing it privately. You can use privately published sites to share your internal documentation or knowledge base with members of your enterprise. You can try GitHub Enterprise risk-free for 30 days. Learn more about the visibility of your GitHub Pages site.
+
+Footer
+© 2025 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact
+Manage cookies
+Do not share my personal information
