@@ -1,0 +1,150 @@
+The 404 "File not found" error on https://williamjordan.io/ is indeed related to your index.html being in the src folder of your WilliamJordan-io/williamjordan.io repository, while GitHub Pages is configured to serve from the root of the main branch. This is a common issue when deploying framework-based projects (like React or Vite, given your mention of src and components) from Replit to GitHub Pages. Let’s break down the problem, its severity, and whether you need to change the code or just the folder structure to get your site live today.
+
+Why Is This Happening?
+GitHub Pages Expects index.html in the Root: Your GitHub Pages settings are set to serve from the root of the main branch (/ (root)). It looks for index.html directly in https://github.com/WilliamJordan-io/williamjordan.io/tree/main. Since index.html is in src/ (e.g., src/index.html), GitHub Pages can’t find it, resulting in the 404 error.
+Replit’s Project Structure: Your Replit project’s src folder likely contains source code (e.g., src/index.html, src/components/), which is typical for frameworks like React with Vite. GitHub Pages requires built static files (e.g., dist/index.html, dist/assets/), not the raw src/ files. The index.html in src/ is probably a template or entry point used during development, not the final static file needed for deployment.
+Custom Domain: Your custom domain (williamjordan.io) is correctly set up (DNS check successful, HTTPS enforced), so the issue is purely with the file structure, not the domain.
+How Big of a Problem Is This?
+Severity: Moderate but fixable within hours. The issue is a configuration mismatch between your project’s structure and GitHub Pages’ expectations. It’s a common hurdle when deploying framework-based apps, especially from Replit, which often exports source code rather than built files.
+Impact: Your site won’t display until index.html (and its assets) is in the root of the main branch as a built static file. This requires a build step and file reorganization, but it’s straightforward.
+Do You Need to Change the Code or Just the Folder?
+Folder: The primary issue is that index.html is in src/ instead of the root. However, simply moving src/index.html to the root won’t work because it’s likely a source file (e.g., a minimal HTML template for React like <div id="root"></div>). You need to build your project to generate the correct static index.html and assets, then place those in the root.
+Code: You may need a small code change to ensure the built index.html uses relative paths (e.g., <script src="./assets/main.js">) for your custom domain. This depends on your framework (e.g., Vite, Create React App). If paths are already relative, no code change is needed.
+Step-by-Step Fix to Get Your Site Live Today
+1. Understand Your Project’s Framework
+Your src and components suggest a framework like React with Vite (common in Replit). Confirm this to tailor the build process.
+
+Action:
+
+In Replit, open package.json and check dependencies (e.g., "react", "vite", "vue").
+Look for a "build" script (e.g., "build": "vite build").
+If unsure, assume React/Vite (most common) or share package.json contents for precise guidance.
+2. Build the Project to Generate Static Files
+The index.html in src/ is not deployable. You need to build your project to create a dist (or build) folder with static files.
+
+Action:
+
+In Replit’s terminal, run:
+React/Vite: npm run build (creates dist/).
+Create React App: npm run build (creates build/).
+Vue: npm run build (creates dist/).
+If no "build" script exists, run npm install and check again.
+Verify the dist folder in Replit’s file explorer. It should contain:
+index.html (the built version, with <script> tags linking to JS/CSS).
+assets/ or static/ with .js, .css, etc.
+If the build fails, check terminal errors (e.g., missing dependencies) and fix (e.g., npm install).
+3. Move Built Files to Repository Root
+GitHub Pages needs the dist contents in the root of https://github.com/WilliamJordan-io/williamjordan.io/tree/main.
+
+Action:
+
+Download dist:
+In Replit, right-click dist > Download as ZIP.
+Unzip locally to get index.html, assets/, etc.
+Upload to GitHub:
+Go to https://github.com/WilliamJordan-io/williamjordan.io.
+Click Add file > Upload files.
+Upload dist contents (e.g., index.html, assets/) to the root (not src/ or a subfolder).
+Commit to the main branch (e.g., “Add built files”).
+Alternative (Git):
+If Replit is linked to your repo:
+Move dist contents to root: mv dist/* . in Replit’s terminal.
+Commit and push:
+bash
+
+Copy
+git add .
+git commit -m "Add built files"
+git push origin main
+Handle src/:
+The src/ folder (with the current index.html) is irrelevant to GitHub Pages. Leave it in the repo (it won’t interfere) or delete it to avoid confusion. Keep it in Replit for future edits.
+Do not move src/index.html to the root—it’s not the built file.
+4. Ensure Correct Asset Paths
+The built index.html may use absolute paths (e.g., <script src="/assets/main.js">), which can break on williamjordan.io. Relative paths (e.g., ./assets/main.js) are needed.
+
+Action:
+
+Check Framework Config:
+Vite (React): In vite.config.js, add:
+javascript
+
+Copy
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+export default defineConfig({
+  plugins: [react()],
+  base: './', // Relative paths
+});
+Create React App: In package.json, set "homepage": ".".
+Vue: In vue.config.js, set publicPath: './'.
+Rebuild:
+Run npm run build again in Replit to update dist with relative paths.
+Re-upload dist contents to the root (as in Step 3).
+Verify index.html:
+Check https://github.com/WilliamJordan-io/williamjordan.io/blob/main/index.html.
+Ensure <script> and <link> tags use relative paths (e.g., src="./assets/main.js").
+5. Verify Deployment
+Action:
+
+Check https://github.com/WilliamJordan-io/williamjordan.io/actions for the “pages build and deployment” workflow.
+Confirm it ran successfully (green checkmark).
+If failed, view logs for errors (e.g., missing index.html) and fix.
+Wait 1–5 minutes, then visit https://williamjordan.io/.
+Use browser developer tools (F12):
+Console: Look for 404 errors (e.g., missing assets/main.js).
+Network: Verify index.html and assets load (200 status).
+Test https://williamjordan-io.github.io/ to rule out domain issues.
+6. Quick Test (Optional)
+To confirm GitHub Pages works, upload a minimal index.html to the root.
+
+Action:
+
+Create index.html:
+html
+
+Copy
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test</title>
+</head>
+<body>
+  <h1>Test Site</h1>
+</body>
+</html>
+Upload to the root via GitHub’s Add file > Upload files.
+Commit and check https://williamjordan.io/ after 1–5 minutes.
+If it shows “Test Site”, your setup is correct, and the issue is with your built files.
+How Long Will This Take?
+1–2 hours max (likely 30–60 minutes):
+Build: 5–10 minutes (Replit terminal).
+Upload: 5–10 minutes (GitHub or Git).
+Config fix (if needed): 10–15 minutes.
+Deployment wait: 1–5 minutes per attempt.
+You can have the site live today by following these steps.
+If It Still Doesn’t Work
+If the 404 persists:
+
+Share:
+package.json dependencies or framework (e.g., React/Vite).
+Current file structure of https://github.com/WilliamJordan-io/williamjordan.io/tree/main (e.g., is index.html in root now?).
+Console/Network errors from https://williamjordan.io/.
+Check:
+Case sensitivity: Ensure index.html (not Index.html).
+GitHub Actions log for deployment errors.
+.gitignore: Ensure dist/ isn’t ignored.
+Summary
+Problem: index.html in src/ is a source file; GitHub Pages needs a built index.html in the root.
+Fix: Build your project (npm run build), move dist contents to the root, and ensure relative paths.
+Code Change: Likely just a config tweak (e.g., base: './' in vite.config.js).
+Folder: Don’t rename src/; upload built files to the root instead.
+Run npm run build in Replit, upload dist to the root, and check https://williamjordan.io/ after 5 minutes. Share your framework or errors if stuck, and we’ll get it live today!
+
+
+
+
+
+
+
+1.9s
