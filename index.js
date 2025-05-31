@@ -160,8 +160,8 @@ var vite_config_default = defineConfig({
   },
   root: path.resolve(import.meta.dirname),
   // Set to project root
-  base: "/",
-  // Add this line for GitHub Pages custom domain
+  base: "./",
+  // Change to relative path for assets
   build: {
     outDir: path.resolve(import.meta.dirname, "dist"),
     // Output directly to 'dist'
