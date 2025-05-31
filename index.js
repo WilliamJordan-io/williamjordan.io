@@ -153,13 +153,16 @@ var vite_config_default = defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "src"),
+      // Ensure this points to the new src at root
       "@shared": path.resolve(import.meta.dirname, "shared"),
       "@assets": path.resolve(import.meta.dirname, "attached_assets")
     }
   },
   root: path.resolve(import.meta.dirname),
+  // Set to project root
   build: {
     outDir: path.resolve(import.meta.dirname, "dist"),
+    // Output directly to 'dist'
     emptyOutDir: true
   }
 });
