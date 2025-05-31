@@ -47,9 +47,8 @@ export async function setupVite(app: Express, server: Server) {
     try {
       const clientTemplate = path.resolve(
         import.meta.dirname,
-        "..",
-        "client",
-        "index.html",
+        "..", // Go up from server/ to project root
+        "index.html", // Access index.html at project root
       );
 
       // always reload the index.html file from disk incase it changes
@@ -68,7 +67,8 @@ export async function setupVite(app: Express, server: Server) {
 }
 
 export function serveStatic(app: Express) {
-  const distPath = path.resolve(import.meta.dirname, "public");
+  // This should point to the output of 'vite build --config vite.config.build.ts'
+  const distPath = path.resolve(import.meta.dirname, "..", "dist"); 
 
   if (!fs.existsSync(distPath)) {
     throw new Error(

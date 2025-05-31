@@ -5,9 +5,9 @@ import path from 'path';
 export default defineConfig({
   plugins: [react()],
   base: '/',
-  root: 'client',
+  root: '.',
   build: {
-    outDir: '../build',
+    outDir: './dist',
     assetsDir: 'assets',
     rollupOptions: {
       output: {
@@ -17,7 +17,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './client/src'),
+      '@': path.resolve(__dirname, './src'),
       '@assets': path.resolve(__dirname, './attached_assets'),
     },
   },
