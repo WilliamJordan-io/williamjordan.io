@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { 
   Brain, 
   Palette, 
-  Languages, 
+  Globe, 
   Clock, 
   Database, 
   TrendingUp,
@@ -33,7 +33,7 @@ export default function AISupportSection() {
       color: "text-success"
     },
     {
-      icon: Languages,
+      icon: Globe,
       title: "Global Reach",
       description: "Support for 10+ major languages enabling businesses to serve diverse global audiences effectively.",
       color: "text-primary"

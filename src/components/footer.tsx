@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Instagram, Mail, Phone, MapPin, ArrowUp } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, MapPin, ArrowUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Footer() {
@@ -16,8 +16,7 @@ export default function Footer() {
 
   const socialLinks = [
     { icon: Linkedin, href: "https://www.linkedin.com/in/william-jordan-97981a118/", label: "LinkedIn" },
-    { icon: Github, href: "https://github.com/WilliamJordan33", label: "GitHub" },
-    { icon: Instagram, href: "https://www.instagram.com/william____jordan/", label: "Instagram" }
+    { icon: Github, href: "https://github.com/WilliamJordan33", label: "GitHub" }
   ];
 
   const quickLinks = [

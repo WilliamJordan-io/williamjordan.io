@@ -156,12 +156,9 @@ export default function ContactSection() {
               viewport={{ amount: 0.05, margin: "0px 0px -200px 0px" }}
             >
               <h4 className="text-lg font-semibold mb-4">Connect With Me</h4>
-              <p className="text-muted-foreground mb-6">
-                Professional office environment
-              </p>
               <div className="bg-secondary p-6 rounded-lg">
                 <div className="h-40 bg-muted rounded-lg flex items-center justify-center">
-                  <p className="text-muted-foreground">Professional office environment</p>
+                  <p className="text-muted-foreground">Let's connect and discuss your project</p>
                 </div>
               </div>
             </motion.div>

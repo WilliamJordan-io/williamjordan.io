@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 export default function FullStackFlowDiagram() {
   return (
     <motion.div 
-      className="py-20"
+      className="py-12"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
@@ -176,9 +176,9 @@ export default function FullStackFlowDiagram() {
               [Frontend]
             </div>
             <div className="text-gray-400 mt-1">| Update UI</div>
-            <div className="text-red-400 ml-8">|→ [Error: API Failure]</div>
-            <div className="text-gray-400 ml-16">| Display Error Message</div>
-            <div className="text-gray-400 ml-16">| Log to Sentry</div>
+            <div className="text-red-400">|→ [Error: API Failure]</div>
+            <div className="text-gray-400">| Display Error Message</div>
+            <div className="text-gray-400">| Log to Sentry</div>
           </motion.div>
 
           <div className="text-center text-gray-400">↓</div>
