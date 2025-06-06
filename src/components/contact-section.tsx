@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, MapPin, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -24,13 +24,7 @@ export default function ContactSection() {
       icon: Mail,
       title: "Email",
       value: "williamjordan@time-ai.agency",
-      href: "mailto:william.jordan@email.com"
-    },
-    {
-      icon: Phone,
-      title: "Phone",
-      value: "+1 (650) 208-5026",
-      href: "tel:+15551234567"
+      href: "mailto:williamjordan@time-ai.agency"
     },
     {
       icon: MapPin,

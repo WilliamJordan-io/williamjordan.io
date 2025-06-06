@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Phone, MapPin, ArrowUp } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, ArrowUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Footer() {
@@ -35,7 +35,6 @@ export default function Footer() {
 
   const contactInfo = [
     { icon: Mail, text: "williamjordan@time-ai.agency", href: "mailto:williamjordan@time-ai.agency" },
-    { icon: Phone, text: "+1 (650) 208-5026", href: "tel:+15551234567" },
     { icon: MapPin, text: "San Francisco, CA", href: "#" }
   ];
 

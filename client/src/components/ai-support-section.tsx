@@ -344,8 +344,8 @@ export default function AISupportSection() {
               transition={{ duration: 0.6 }}
               viewport={{ amount: 0.05, margin: "0px 0px -200px 0px" }}
             >
-              <Card className="bg-secondary border-primary/20">
-                <CardContent className="p-8">
+              <Card className="bg-secondary border-primary/20 h-full">
+                <CardContent className="p-8 h-full flex flex-col">
                   <div className="flex items-center mb-6">
                     <PieChart className="text-primary h-8 w-8 mr-3" />
                     <h4 className="text-xl font-bold">Global Market Share by Industry</h4>
@@ -400,8 +400,8 @@ export default function AISupportSection() {
               transition={{ duration: 0.6 }}
               viewport={{ amount: 0.05, margin: "0px 0px -200px 0px" }}
             >
-              <Card className="bg-secondary border-primary/20">
-                <CardContent className="p-8">
+              <Card className="bg-secondary border-primary/20 h-full">
+                <CardContent className="p-8 h-full flex flex-col">
                   <div className="flex items-center mb-6">
                     <BarChart3 className="text-primary h-8 w-8 mr-3" />
                     <h4 className="text-xl font-bold">North America Growth Trajectory</h4>
