@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -76,13 +76,14 @@ export default function Navigation() {
             <SheetContent>
               <div className="flex flex-col space-y-6 mt-8">
                 {navItems.map((item) => (
-                  <button
-                    key={item.id}
-                    onClick={() => scrollToSection(item.id)}
-                    className="text-left text-lg hover:text-primary transition-colors duration-200"
-                  >
-                    {item.label}
-                  </button>
+                  <SheetClose key={item.id} asChild>
+                    <button
+                      onClick={() => scrollToSection(item.id)}
+                      className="text-left text-lg hover:text-primary transition-colors duration-200"
+                    >
+                      {item.label}
+                    </button>
+                  </SheetClose>
                 ))}
               </div>
             </SheetContent>
