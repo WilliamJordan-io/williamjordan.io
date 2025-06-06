@@ -278,7 +278,7 @@ app.use((req, res, next) => {
   } else {
     serveStatic(app);
   }
-  const port = 5173;
+  const port = 5e3;
   server.listen({
     port,
     host: "0.0.0.0",
