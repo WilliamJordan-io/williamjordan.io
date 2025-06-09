@@ -55,20 +55,34 @@ export default function ContactSection() {
     setIsSubmitting(true);
 
     try {
-      // Using Web3Forms for reliable static site form handling
-      const response = await fetch("https://api.web3forms.com/submit", {
+      // Use backend API for development, Web3Forms for production
+      const isProduction = !window.location.hostname.includes('localhost') && !window.location.hostname.includes('replit');
+      const apiUrl = isProduction 
+        ? "https://api.web3forms.com/submit"
+        : "/api/contact";
+
+      const requestBody = isProduction 
+        ? {
+            access_key: "413f1e9c-8a59-4680-a6d3-f8899c7ca41d",
+            name: formData.name,
+            email: formData.email,
+            company: formData.company || "",
+            message: formData.message,
+            subject: `New Contact Form Submission from ${formData.name}`,
+          }
+        : {
+            name: formData.name,
+            email: formData.email,
+            company: formData.company,
+            message: formData.message,
+          };
+
+      const response = await fetch(apiUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "a4b8c9d2-e3f4-5678-9012-34567890abcd",
-          name: formData.name,
-          email: formData.email,
-          company: formData.company || "",
-          message: formData.message,
-          subject: `New Contact Form Submission from ${formData.name}`,
-        }),
+        body: JSON.stringify(requestBody),
       });
 
       const result = await response.json();

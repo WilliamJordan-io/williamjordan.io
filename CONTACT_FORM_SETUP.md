@@ -12,7 +12,7 @@ To make the contact form work on your live website, you need to add the Web3Form
 3. In the left sidebar, click **Secrets and variables** → **Actions**
 4. Click **New repository secret**
 5. Name: `WEB3FORMS_ACCESS_KEY`
-6. Value: `a8c7f8ef-ccaa-4b41-98e5-e90ca72ee96b`
+6. Value: `413f1e9c-8a59-4680-a6d3-f8899c7ca41d`
 7. Click **Add secret**
 
 ## What Happens Next
