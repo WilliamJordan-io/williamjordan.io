@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetTitle, SheetHeader, SheetDescription } from "@/components/ui/sheet";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,10 +29,13 @@ export default function Navigation() {
   }, [lastScrollY]);
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    setIsOpen(false); // Close mobile menu first
+    setTimeout(() => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }, 300); // Wait for sheet to close
   };
 
   const navItems = [
@@ -67,23 +71,26 @@ export default function Navigation() {
           </div>
 
           {/* Mobile Navigation */}
-          <Sheet>
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="md:hidden">
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
             <SheetContent>
-              <div className="flex flex-col space-y-6 mt-8">
+              <SheetHeader className="sr-only">
+                <SheetTitle>Navigation</SheetTitle>
+                <SheetDescription>Navigate to sections</SheetDescription>
+              </SheetHeader>
+              <div className="flex flex-col space-y-6 mt-6">
                 {navItems.map((item) => (
-                  <SheetClose key={item.id} asChild>
-                    <button
-                      onClick={() => scrollToSection(item.id)}
-                      className="text-left text-lg hover:text-primary transition-colors duration-200"
-                    >
-                      {item.label}
-                    </button>
-                  </SheetClose>
+                  <button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    className="text-left text-lg hover:text-primary transition-colors duration-200"
+                  >
+                    {item.label}
+                  </button>
                 ))}
               </div>
             </SheetContent>

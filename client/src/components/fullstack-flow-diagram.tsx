@@ -178,7 +178,7 @@ export default function FullStackFlowDiagram() {
             <div className="text-gray-400 mt-1">| Update UI</div>
             <div className="text-red-400 ml-8">|→ [Error: API Failure]</div>
             <div className="text-gray-400 ml-16">| Display Error Message</div>
-            <div className="text-gray-400 ml-16">| Log to Sentry</div>
+            <div className="text-gray-400">| Log to Sentry</div>
           </motion.div>
 
           <div className="text-center text-gray-400">↓</div>
