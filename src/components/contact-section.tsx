@@ -55,28 +55,32 @@ export default function ContactSection() {
     setIsSubmitting(true);
 
     try {
-      // Using Formspree for static site form handling
-      const response = await fetch("https://formspree.io/f/xpznwzdl", {
+      // Using Web3Forms for reliable static site form handling
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "a4b8c9d2-e3f4-5678-9012-34567890abcd",
           name: formData.name,
           email: formData.email,
-          company: formData.company,
+          company: formData.company || "",
           message: formData.message,
+          subject: `New Contact Form Submission from ${formData.name}`,
         }),
       });
 
-      if (response.ok) {
+      const result = await response.json();
+
+      if (result.success) {
         toast({
           title: "Message sent successfully!",
           description: "Thank you for your message! I'll get back to you soon.",
         });
         setFormData({ name: "", email: "", company: "", message: "" });
       } else {
-        throw new Error("Failed to send message");
+        throw new Error(result.message || "Failed to send message");
       }
     } catch (error) {
       toast({
